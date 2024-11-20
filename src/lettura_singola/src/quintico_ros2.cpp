@@ -35,12 +35,19 @@ public:
         }
 
         // Configurazione finale dei joint
-        qf.data = q0.data;
-        qf.data[6]=qf.data[6]+M_PI/4;
-
+        //qf.data = q0.data;
+        //qf.data[6]=qf.data[6]+M_PI/4;
+        qf.data[0]=0.155812;
+        qf.data[1]=1.595218;
+        qf.data[2]=1.450156;
+        qf.data[3]=-1.632785;
+        qf.data[4]=-0.119421;
+        qf.data[5]=1.792578;
+        qf.data[6]=1.519227;
+        
 
         rclcpp::WallRate loop_rate(1000); // 1 kHz
-        double traj_duration = 8.0;
+        double traj_duration = 30;
         rclcpp::Time t0 = this->now();
         rclcpp::Duration t(0, 0);
 
